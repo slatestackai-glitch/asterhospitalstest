@@ -4,7 +4,7 @@ import { useConversationStore } from '../state/useConversationStore';
 import { happyPath } from '../data/happyPath';
 
 const SuggestionDock: React.FC = () => {
-  const { currentStepId, setComposerValue, sendMessage } = useConversationStore();
+  const { currentStepId, sendMessage } = useConversationStore();
 
   const step = happyPath[currentStepId as keyof typeof happyPath];
   const suggestions = (step?.suggestions || []).slice(0, 3);

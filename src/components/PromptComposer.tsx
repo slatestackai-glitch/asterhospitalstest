@@ -91,10 +91,10 @@ const PromptComposer: React.FC<PromptComposerProps> = ({ mode }) => {
       {/* Subtle landing helper */}
       {mode === 'landing' && (
         <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-full text-center">
-          <p className="text-gray-400 text-xs font-medium uppercase tracking-[0.2em] flex items-center justify-center gap-2">
-            <span className="w-8 h-px bg-gray-200" />
+          <p className="text-gray-700 text-xs font-bold uppercase tracking-[0.2em] flex items-center justify-center gap-2">
+            <span className="w-8 h-px bg-gray-400" />
             AI-Powered Personalized Care
-            <span className="w-8 h-px bg-gray-200" />
+            <span className="w-8 h-px bg-gray-400" />
           </p>
         </div>
       )}

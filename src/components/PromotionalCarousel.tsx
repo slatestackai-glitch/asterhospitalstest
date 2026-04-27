@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star, MapPin, ChevronRight, User } from 'lucide-react';
+import { Star, MapPin, ChevronRight } from 'lucide-react';
 import { doctors, hospitals, type Doctor, type Hospital } from '../data/happyPath';
 
 interface PromotionalCarouselProps {
