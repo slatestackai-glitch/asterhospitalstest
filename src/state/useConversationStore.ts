@@ -105,15 +105,12 @@ export const useConversationStore = create<ConversationState>((set, get) => ({
           setStep('need-narrowing');
         } else if (lowerContent.includes("doctor")) {
           // If they know the doctor, we move towards doctor selection or specialty narrowing
-          const step = happyPath['city-selection']; // Ask for city first
           addAssistantMessage(["Great. Let's find your doctor.", "Which city are you looking in?"]);
           setStep('city-selection');
         } else if (lowerContent.includes("speciality")) {
-          const step = happyPath['city-selection'];
           addAssistantMessage(["Sure, I can help with that.", "Which city is convenient for you?"]);
           setStep('city-selection');
         } else if (lowerContent.includes("hospital")) {
-          const step = happyPath['city-selection'];
           addAssistantMessage(["Got it. We have multiple hospitals across cities.", "Which city should we look in?"]);
           setStep('city-selection');
         }
