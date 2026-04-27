@@ -103,6 +103,19 @@ export const useConversationStore = create<ConversationState>((set, get) => ({
           const step = happyPath['need-narrowing'];
           addAssistantMessage(step.aiMessage);
           setStep('need-narrowing');
+        } else if (lowerContent.includes("doctor")) {
+          // If they know the doctor, we move towards doctor selection or specialty narrowing
+          const step = happyPath['city-selection']; // Ask for city first
+          addAssistantMessage(["Great. Let's find your doctor.", "Which city are you looking in?"]);
+          setStep('city-selection');
+        } else if (lowerContent.includes("speciality")) {
+          const step = happyPath['city-selection'];
+          addAssistantMessage(["Sure, I can help with that.", "Which city is convenient for you?"]);
+          setStep('city-selection');
+        } else if (lowerContent.includes("hospital")) {
+          const step = happyPath['city-selection'];
+          addAssistantMessage(["Got it. We have multiple hospitals across cities.", "Which city should we look in?"]);
+          setStep('city-selection');
         }
         break;
       
@@ -121,7 +134,11 @@ export const useConversationStore = create<ConversationState>((set, get) => ({
         break;
 
       case 'city-selection':
-        if (lowerContent.includes("skin") || lowerContent.includes("hair") || lowerContent.includes("child") || lowerContent.includes("heart")) {
+        if (lowerContent.includes("bangalore") || lowerContent.includes("kochi") || lowerContent.includes("any")) {
+          const step = happyPath['city-selection'];
+          addAssistantMessage(step.aiMessage);
+          setStep('city-selection');
+        } else if (lowerContent.includes("skin") || lowerContent.includes("hair") || lowerContent.includes("child") || lowerContent.includes("heart")) {
           const detailsStep = happyPath['skin-hair-details'];
           addAssistantMessage(detailsStep.aiMessage, 'specialty', { id: 'derm' });
           setStep('skin-hair-details');

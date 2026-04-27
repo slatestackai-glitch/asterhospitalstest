@@ -14,7 +14,7 @@ const PreviewBar: React.FC<PreviewBarProps> = ({ mode, onModeChange }) => {
     <div className="h-14 bg-white border-b border-gray-100 flex items-center justify-between px-6 shrink-0 relative z-50 shadow-sm">
       <div className="flex items-center gap-4">
         <div className="flex items-center">
-          <img src="/src/assets/logo.svg" alt="Aster Logo" className="h-8 w-auto" />
+          <img src="/logo.svg" alt="Aster Logo" className="h-8 w-auto" />
         </div>
         <div className="h-4 w-px bg-gray-200" />
         <span className="text-xs font-semibold uppercase tracking-wider text-gray-400 bg-gray-50 px-2.5 py-1 rounded-full border border-gray-100">
