@@ -16,17 +16,17 @@ const SuggestionDock: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-wrap gap-2 mb-6 justify-center max-w-2xl mx-auto px-4">
-      <AnimatePresence mode="popLayout">
+    <div className="flex flex-wrap gap-2 mb-4 justify-start">
+      <AnimatePresence>
         {suggestions.map((suggestion, index) => (
           <motion.button
             key={suggestion}
-            initial={{ opacity: 0, y: 10, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ delay: index * 0.05 }}
             onClick={() => handleSuggestionClick(suggestion)}
-            className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-600 hover:border-aster-teal hover:text-aster-teal hover:bg-aster-teal/5 transition-all shadow-sm whitespace-nowrap"
+            className="px-4 py-2 bg-white/80 backdrop-blur-sm border border-gray-100 rounded-2xl text-sm font-semibold text-gray-700 hover:border-aster-teal hover:text-aster-teal hover:bg-white transition-all shadow-premium hover:shadow-hover whitespace-nowrap cursor-pointer"
           >
             {suggestion}
           </motion.button>

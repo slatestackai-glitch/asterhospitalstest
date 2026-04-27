@@ -108,10 +108,10 @@ export const happyPath: Record<StepId, Step> = {
     ],
     prefilledResponse: "I need help choosing the right specialist.",
     suggestions: [
-      "I know the doctor.",
-      "I know the speciality.",
-      "I know the hospital.",
-      "I need help choosing the right specialist."
+      "I know the doctor",
+      "I know the speciality",
+      "I know the hospital",
+      "I need help choosing the right specialist"
     ]
   },
   'need-narrowing': {
@@ -122,9 +122,9 @@ export const happyPath: Record<StepId, Step> = {
     ],
     prefilledResponse: "I'd prefer an in-person visit.",
     suggestions: [
-      "I'd prefer an in-person visit.",
-      "I'd prefer an online consultation.",
-      "Show me both."
+      "I'd prefer an in-person visit",
+      "I'd prefer an online consultation",
+      "Show me both"
     ]
   },
   'mode-selection': {
@@ -134,9 +134,9 @@ export const happyPath: Record<StepId, Step> = {
     ],
     prefilledResponse: "I'm looking in Bangalore.",
     suggestions: [
-      "I'm looking in Bangalore.",
-      "I'm looking in Kochi.",
-      "Any nearby option is fine."
+      "I'm looking in Bangalore",
+      "I'm looking in Kochi",
+      "Any nearby option is fine"
     ]
   },
   'city-selection': {
@@ -147,11 +147,11 @@ export const happyPath: Record<StepId, Step> = {
     ],
     prefilledResponse: "I need help with skin or hair concerns.",
     suggestions: [
-      "I need help with skin or hair concerns.",
-      "This is for child health.",
-      "I need help with heart-related concerns.",
-      "This is for a general consultation.",
-      "I need help with women's health."
+      "I need help with skin or hair concerns",
+      "This is for child health",
+      "I need help with heart-related concerns",
+      "This is for a general consultation",
+      "I need help with women's health"
     ]
   },
   'skin-hair-details': {
@@ -185,8 +185,8 @@ export const happyPath: Record<StepId, Step> = {
     ],
     prefilledResponse: "Please save this on WhatsApp.",
     suggestions: [
-      "Please save this on WhatsApp.",
-      "Not now, thank you."
+      "Please save this on WhatsApp",
+      "Not now, thank you"
     ]
   },
   'whatsapp-continuation': {
