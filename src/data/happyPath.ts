@@ -14,6 +14,15 @@ export interface Specialty {
   description: string;
 }
 
+export interface Hospital {
+  id: string;
+  name: string;
+  location: string;
+  specialties: string[];
+  imageUrl: string;
+  rating: string;
+}
+
 export const doctors: Doctor[] = [
   {
     id: "dr-varghese",
@@ -40,6 +49,33 @@ export const specialties: Specialty[] = [
     id: "derm",
     name: "Dermatology",
     description: "Expert care for skin, hair, and nail conditions.",
+  }
+];
+
+export const hospitals: Hospital[] = [
+  {
+    id: "aster-cmi",
+    name: "Aster CMI Hospital",
+    location: "Hebbal, Bangalore",
+    specialties: ["Multi-specialty", "Quaternary Care"],
+    imageUrl: "https://images.unsplash.com/photo-1587350846008-0610f9486337?q=80&w=600&h=400&auto=format&fit=crop",
+    rating: "4.8"
+  },
+  {
+    id: "aster-rv",
+    name: "Aster RV Hospital",
+    location: "JP Nagar, Bangalore",
+    specialties: ["Comprehensive Care", "Digital Health"],
+    imageUrl: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=600&h=400&auto=format&fit=crop",
+    rating: "4.7"
+  },
+  {
+    id: "aster-medcity",
+    name: "Aster Medcity",
+    location: "Kochi, Kerala",
+    specialties: ["Global Healthcare", "Advanced Research"],
+    imageUrl: "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=600&h=400&auto=format&fit=crop",
+    rating: "4.9"
   }
 ];
 

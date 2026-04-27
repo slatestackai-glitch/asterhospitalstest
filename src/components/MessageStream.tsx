@@ -5,6 +5,7 @@ import RecommendationModule from './RecommendationModule';
 import SlotModule from './SlotModule';
 import ConfirmationModule from './ConfirmationModule';
 import HandoffPanel from './HandoffPanel';
+import PromotionalCarousel from './PromotionalCarousel';
 
 const MessageStream: React.FC = () => {
   const { messages } = useConversationStore();
@@ -67,6 +68,16 @@ const MessageStream: React.FC = () => {
                 className="w-full mt-2"
               >
                 <HandoffPanel />
+              </motion.div>
+            )}
+
+            {message.type === 'carousel' && (
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="w-full mt-2"
+              >
+                <PromotionalCarousel type={message.data?.carouselType || 'doctors'} />
               </motion.div>
             )}
           </div>

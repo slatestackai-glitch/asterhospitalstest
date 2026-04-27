@@ -7,16 +7,12 @@ const SuggestionDock: React.FC = () => {
   const { currentStepId, setComposerValue, sendMessage } = useConversationStore();
 
   const step = happyPath[currentStepId as keyof typeof happyPath];
-  const suggestions = step?.suggestions || [];
+  const suggestions = (step?.suggestions || []).slice(0, 3);
 
   if (suggestions.length === 0) return null;
 
   const handleSuggestionClick = (suggestion: string) => {
-    setComposerValue(suggestion);
-    // Add a tiny delay for visual feedback of text entering composer
-    setTimeout(() => {
-      sendMessage(suggestion);
-    }, 200);
+    sendMessage(suggestion);
   };
 
   return (

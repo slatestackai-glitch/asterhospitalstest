@@ -5,7 +5,7 @@ interface Message {
   id: string;
   role: 'user' | 'assistant';
   content: string;
-  type?: 'text' | 'doctor-list' | 'specialty' | 'slots' | 'details' | 'confirmation' | 'whatsapp';
+  type?: 'text' | 'doctor-list' | 'specialty' | 'slots' | 'details' | 'confirmation' | 'whatsapp' | 'carousel';
   data?: any;
 }
 
@@ -40,15 +40,7 @@ export const useConversationStore = create<ConversationState>((set, get) => ({
   userDetails: null,
 
   setStep: (stepId) => {
-    const step = happyPath[stepId as StepId];
-    if (step) {
-      set({ 
-        currentStepId: stepId,
-        composerValue: step.prefilledResponse
-      });
-    } else {
-      set({ currentStepId: stepId });
-    }
+    set({ currentStepId: stepId });
   },
 
   setComposerValue: (value) => set({ composerValue: value }),
@@ -101,7 +93,7 @@ export const useConversationStore = create<ConversationState>((set, get) => ({
         } else {
           // General entry (Book appointment, Find doctor, etc.)
           const step = happyPath['start'];
-          addAssistantMessage(step.aiMessage);
+          addAssistantMessage(step.aiMessage, 'carousel', { carouselType: 'hospitals' });
           setStep('start');
         }
         break;
@@ -138,7 +130,11 @@ export const useConversationStore = create<ConversationState>((set, get) => ({
 
       case 'skin-hair-details':
         const docStep = happyPath['doctor-selection'];
-        addAssistantMessage(docStep.aiMessage, 'slots');
+        addAssistantMessage(docStep.aiMessage, 'carousel', { carouselType: 'doctors' });
+        // After showing doctors, we also show slots as part of the flow
+        setTimeout(() => {
+          addAssistantMessage(["You can pick a specialty or see some of our top doctors above."], 'slots');
+        }, 1000);
         setStep('doctor-selection');
         break;
 
